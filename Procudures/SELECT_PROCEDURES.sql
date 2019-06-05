@@ -31,3 +31,25 @@ BEGIN
 	SELECT imagem_cliente FROM tblCliente WHERE usuario LIKE @usuario
 END
 GO
+CREATE PROCEDURE usp_selNicknameTecladoCustomizado
+	@id_cliente INT
+AS
+BEGIN
+	SELECT nickname FROM tblTecladoCustomizado WHERE id_cliente = @id_cliente
+END
+GO
+CREATE PROCEDURE usp_selIdColecao
+	@nick_colecao VARCHAR(50),
+	@id_cliente INT
+AS
+BEGIN
+	select id_colecao from tblColecao where nick_colecao like @nick_colecao and id_cliente = @id_cliente
+END
+GO
+CREATE PROCEDURE usp_selNickColecao
+	@id_cliente INT
+AS
+BEGIN
+	select nick_colecao from tblColecao where id_cliente = @id_cliente
+END
+GO
