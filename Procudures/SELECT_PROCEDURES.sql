@@ -53,3 +53,15 @@ BEGIN
 	select nick_colecao from tblColecao where id_cliente = @id_cliente
 END
 GO
+CREATE PROCEDURE usp_selTotalClientes
+AS
+BEGIN
+	SELECT COUNT(id_cliente) FROM tblCliente
+END
+GO
+CREATE PROCEDURE usp_selTotalTeclados
+AS
+BEGIN
+	SELECT COUNT(id_teclado_customizado) FROM tblTecladoCustomizado
+END
+GO
