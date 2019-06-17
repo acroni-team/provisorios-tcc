@@ -6,11 +6,10 @@ CREATE PROCEDURE usp_insCadTblCliente
 	@usuario VARCHAR(50),
 	@senha VARCHAR(50),
 	@email VARCHAR(50),
-	@cpf VARCHAR(50),
-	@imagem_cliente VARBINARY(MAX)
+	@cpf VARCHAR(50)
 AS
 BEGIN
-	INSERT INTO tblCliente(nome,usuario,senha,email,cpf,imagem_cliente) VALUES (@nome,@usuario,@senha,@email,@cpf,@imagem_cliente)
+	INSERT INTO tblCliente(nome,usuario,senha,email,cpf) VALUES (@nome,@usuario,@senha,@email,@cpf)
 END
 GO
 CREATE PROCEDURE usp_insTecladoCustomizado
