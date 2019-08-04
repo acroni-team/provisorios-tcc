@@ -40,13 +40,22 @@ BEGIN
 	SELECT imagem_colecao FROM tblColecao AS colec INNER JOIN tblCliente AS cli ON cli.id_cliente = colec.id_cliente AND usuario = @usuario
 END
 GO
-CREATE PROCEDURE usp_GetImagem (
+CREATE PROCEDURE usp_GetImagemTeclado (
 	@usuario VARCHAR(50),
 	@id_teclado_customizado int
 )
 AS
 BEGIN
 	SELECT imagem_teclado FROM tblTecladoCustomizado AS tec INNER JOIN tblCliente AS cli ON cli.id_cliente = tec.id_cliente AND usuario = @usuario AND id_teclado_customizado = @id_teclado_customizado
+END
+GO
+CREATE PROCEDURE usp_GetImagem (
+	@usuario VARCHAR(50),
+	@id_colecao int
+)
+AS
+BEGIN
+	SELECT imagem_colecao FROM tblColecao AS colec INNER JOIN tblCliente AS cli ON cli.id_cliente = colec.id_cliente AND usuario = @usuario AND id_colecao = @id_colecao
 END
 GO
 CREATE PROCEDURE usp_select (
@@ -70,3 +79,4 @@ BEGIN
 	DECLARE @query NVARCHAR(255) = 'UPDATE ' + @tabela + ' SET ' + @novaAtribuicao + ' WHERE ' + @condicao
 	EXEC sp_executesql @query
 END
+
