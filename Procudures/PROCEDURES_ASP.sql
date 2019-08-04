@@ -49,7 +49,7 @@ BEGIN
 	SELECT imagem_teclado FROM tblTecladoCustomizado AS tec INNER JOIN tblCliente AS cli ON cli.id_cliente = tec.id_cliente AND usuario = @usuario AND id_teclado_customizado = @id_teclado_customizado
 END
 GO
-CREATE PROCEDURE usp_GetImagem (
+CREATE PROCEDURE usp_GetImage (
 	@usuario VARCHAR(50),
 	@id_colecao int
 )
