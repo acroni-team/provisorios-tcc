@@ -19,7 +19,9 @@ BEGIN
 END
 GO
 CREATE PROCEDURE usp_retornaDs (
-	@id int,
+	@id1 INT,
+	@id2 INT,
+	@id3 INT,
 	@aux VARCHAR(15)
 )
 AS
@@ -29,7 +31,7 @@ BEGIN
 	ELSE IF @aux = 'loja2'
 		SELECT * FROM tblProdutoDaloja WHERE id_produto > 3
 	ELSE IF @aux = 'carrinho'
-		SELECT * FROM tblProdutoDaLoja WHERE id_produto = @id
+		SELECT * FROM tblProdutoDaLoja WHERE id_produto in (@id1, @id2, @id3)
 END
 GO
 CREATE PROCEDURE usp_segundoGaleria (
