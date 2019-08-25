@@ -1,5 +1,16 @@
 USE ACRONI_SQL
 
+CREATE PROCEDURE usp_insertCliente 
+	@nome VARCHAR(50),
+	@usu VARCHAR(50),
+	@senha VARCHAR(50),
+	@email VARCHAR(50),
+	@cpf VARCHAR(50)
+AS
+BEGIN
+	INSERT INTO tblCliente (nome, usuario, senha, email, cpf) VALUES (@nome, @usu, @senha, @email, @cpf)
+END
+GO
 CREATE PROCEDURE usp_updateImagemCliente
 	@img VARBINARY(MAX),
 	@usuario VARCHAR(100)
