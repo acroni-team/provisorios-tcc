@@ -17,7 +17,7 @@ CREATE PROCEDURE usp_insTecladoCustomizado
 	@imagem_teclado VARBINARY(MAX),
 	@nickname_colecao VARCHAR(50),
 	@nickname_teclado VARCHAR(50),
-	@preco VARCHAR(10)
+	@preco DECIMAL(6,2)
 AS
 BEGIN
 	INSERT INTO tblTecladoCustomizado(id_colecao, id_cliente,imagem_teclado,nickname,preco) VALUES ((SELECT id_colecao FROM tblColecao WHERE nick_colecao LIKE @nickname_colecao AND id_cliente = @id_cli),@id_cli,@imagem_teclado,@nickname_teclado,@preco)

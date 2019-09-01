@@ -39,10 +39,11 @@ END
 GO
 CREATE PROCEDURE usp_updColecao
 	@nick_colecao VARCHAR(50),
-	@id_cliente INT
+	@id_cliente INT,
+	@id_colecao int
 AS
 BEGIN
-	UPDATE tblColecao SET nick_colecao = @nick_colecao WHERE nick_colecao LIKE @nick_colecao AND id_cliente = @id_cliente
+	UPDATE tblColecao SET nick_colecao = @nick_colecao WHERE id_colecao LIKE @id_colecao AND id_cliente = @id_cliente
 END
 GO
 CREATE PROCEDURE usp_updImagemCliente
